@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp0jbkew6nf5"]
+
+[ext_resource type="PackedScene" uid="uid://cmo50fladk0jm" path="res://Side-scrolling/sidescrolling_player.tscn" id="1_ul3n2"]
+[ext_resource type="Texture2D" uid="uid://cm17mu8jn6kmj" path="res://icon.svg" id="2_3p407"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov5bn"]
+size = Vector2(448, 38)
+
+[node name="SidescrollingWorld" type="Node2D"]
+
+[node name="SidescrollingPlayer" parent="." instance=ExtResource("1_ul3n2")]
+position = Vector2(320, 430)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform1" type="StaticBody2D" parent="Platforms"]
+position = Vector2(320, 560)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
+shape = SubResource("RectangleShape2D_ov5bn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform1"]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+scale = Vector2(3.5, 0.3)
+texture = ExtResource("2_3p407")
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(820, 450)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+shape = SubResource("RectangleShape2D_ov5bn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform2"]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+scale = Vector2(3.5, 0.3)
+texture = ExtResource("2_3p407")
